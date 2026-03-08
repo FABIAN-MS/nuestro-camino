@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestro Camino Juntos- Fabian & Guadalupe</title>
+    <title>Nuestro Camino Juntos - Fabian & Guadalupe</title>
     
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#ff4d6d">
     <link rel="apple-touch-icon" href="https://via.placeholder.com/192/ff4d6d/ffffff?text=F%26G">
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
         :root {
             --primary: #f8f9fa;
             --accent: #ff4d6d;
@@ -17,7 +18,7 @@
         }
         body {
             margin: 0;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: var(--primary);
             color: var(--text);
             display: flex;
@@ -25,157 +26,106 @@
             align-items: center;
             overflow-x: hidden;
         }
-header {
-    width: 100%;
-    height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('header.jpeg'); 
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-}
 
-header h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3.5rem;
-    line-height: 1;
-    margin: 0;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-}
-
-header h1 span {
-    font-size: 2.8rem;
-    display: block;
-    margin: 5px 0;
-}
-
-header p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    margin-top: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 400;
-}
-
-.timer div, .next-step h3, .btn-upload {
-    font-family: 'Montserrat', sans-serif;
-}
-        .counter-container {
-            background: white;
-            padding: 25px 15px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            width: 85%;
-            margin-top: -60px;
+        /* --- HEADER ESTILO BODA --- */
+        header {
+            width: 100%;
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('WhatsApp\ Image\ 2026-03-07\ at\ 12.43.54\ \(1\).jpeg'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
             text-align: center;
-            z-index: 10;
         }
-        .timer {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-top: 15px;
+        header h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            line-height: 1;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
         }
-        .timer div span {
-            display: block;
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--accent);
-            transition: transform 0.2s ease-in-out;
+        header h1 span { font-size: 2.8rem; display: block; margin: 5px 0; }
+        header p { font-size: 1rem; margin-top: 20px; letter-spacing: 2px; text-transform: uppercase; }
+
+        /* --- SIDEBAR DINÁMICO --- */
+        .sidebar {
+            height: 100%; width: 0; position: fixed; z-index: 1000;
+            top: 0; right: 0; background-color: white;
+            overflow-x: hidden; transition: 0.5s; padding-top: 60px;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
         }
+        .sidebar-content { padding: 20px; }
+        .sidebar h3 { color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-top: 25px;}
+        
+        .add-input-group { display: flex; gap: 5px; margin-bottom: 15px; margin-top: 10px;}
+        .add-input-group input { flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 5px; font-family: 'Montserrat'; }
+        .btn-add-item { background: var(--accent); color: white; border: none; padding: 5px 12px; border-radius: 5px; cursor: pointer; font-weight: bold;}
+
+        .checklist-item { 
+            display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; 
+            justify-content: space-between; font-size: 0.9rem;
+        }
+        .checklist-item div { display: flex; align-items: center; }
+        .checklist-item input[type="checkbox"] { margin-right: 10px; accent-color: var(--accent); transform: scale(1.2); }
+        .btn-delete { color: #ccc; font-size: 14px; cursor: pointer; border: none; background: none; }
+        .btn-delete:hover { color: red; }
+
+        #menuIcon { position: fixed; top: 20px; right: 20px; z-index: 100; font-size: 30px; cursor: pointer; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .closebtn { position: absolute; top: 10px; right: 25px; font-size: 36px; cursor: pointer; color: #888; text-decoration: none; }
+
+        /* --- CONTADORES Y GALERÍA --- */
+        .counter-container { background: white; padding: 25px 15px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 85%; margin-top: -60px; text-align: center; z-index: 10; }
+        .timer { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 15px; }
+        .timer div span { display: block; font-size: 1.4rem; font-weight: 600; color: var(--accent); }
         .pulse { transform: scale(1.2); }
 
-        .upload-section {
-            margin-top: 30px;
-            text-align: center;
-            width: 90%;
-            max-width: 400px;
-        }
-        .btn-upload {
-            background: var(--accent);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
-            margin-bottom: 15px;
-        }
+        .upload-section { margin-top: 30px; text-align: center; width: 90%; max-width: 400px; }
+        .btn-upload { background: var(--accent); color: white; padding: 12px 25px; border-radius: 50px; cursor: pointer; font-weight: 600; display: inline-block; box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3); margin-bottom: 15px; }
         
-        .upload-details {
-            display: none;
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-top: 15px;
-            text-align: left;
-        }
-        .upload-details input, .upload-details textarea {
-            width: 100%;
-            margin-top: 8px;
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: inherit;
-            box-sizing: border-box;
-        }
-        .btn-confirm {
-            background: #2b2d42;
-            color: white;
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            border: none;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .gallery {
-            padding: 40px 20px;
-            width: 90%;
-            max-width: 500px;
-        }
-        .memory-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            margin-bottom: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
+        .gallery { padding: 40px 20px; width: 90%; max-width: 500px; }
+        .memory-card { background: white; border-radius: 15px; overflow: hidden; margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .memory-card img, .memory-card video { width: 100%; display: block; }
         .memory-info { padding: 15px; }
         .memory-info b { color: var(--accent); }
 
-        .next-step {
-            background: #f1f3f5;
-            padding: 30px;
-            text-align: center;
-            border-radius: 20px;
-            margin: 40px 20px;
-            border: 2px dashed #adb5bd;
-            width: 80%;
-            max-width: 460px;
-        }
+        .next-step { background: #f1f3f5; padding: 30px; text-align: center; border-radius: 20px; margin: 40px 20px; border: 2px dashed #adb5bd; width: 80%; max-width: 460px; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>
-        Fabian
-        <span>&</span>
-        Guadalupe
-    </h1>
-    <p>Desde el 7 de febrero de 2026</p>
-</header>
+    <div id="menuIcon" onclick="toggleSidebar()">☰</div>
+
+    <div id="sidebar" class="sidebar">
+        <a class="closebtn" onclick="toggleSidebar()">×</a>
+        <div class="sidebar-content">
+            <div class="checklist-section">
+                <h3>📌 Cosas por Hacer</h3>
+                <div class="add-input-group">
+                    <input type="text" id="inputTodo" placeholder="Nuevo plan...">
+                    <button class="btn-add-item" onclick="addItem('todo')">+</button>
+                </div>
+                <div id="container-todo"></div>
+            </div>
+
+            <div class="checklist-section">
+                <h3>🔥 Sexlist</h3>
+                <div class="add-input-group">
+                    <input type="text" id="inputSex" placeholder="Nueva idea...">
+                    <button class="btn-add-item" onclick="addItem('sex')">+</button>
+                </div>
+                <div id="container-sex"></div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <h1>Fabian <span>&</span> Guadalupe</h1>
+        <p>Desde el 7 de febrero de 2026</p>
+    </header>
 
     <div class="counter-container">
         <h3>Llevamos juntos:</h3>
@@ -184,16 +134,12 @@ header p {
 
     <section class="upload-section">
         <input type="file" id="imageInput" accept="image/*,video/*" style="display: none;">
-        <label for="imageInput" class="btn-upload" id="labelInput">📸 Añadir nuevo momento</label>
-        
-        <div id="uploadForm" class="upload-details">
-            <label>¿Qué día fue?</label>
-            <input type="text" id="customDate" placeholder="Ej: 7 de Marzo">
-            <label>Descripción:</label>
-            <textarea id="customDesc" placeholder="Escribe algo bonito..." rows="2"></textarea>
-            <button class="btn-confirm" id="confirmUpload">Guardar Recuerdo ❤️</button>
+        <label for="imageInput" class="btn-upload">📸 Añadir nuevo momento</label>
+        <div id="uploadForm" style="display:none; background: white; padding: 20px; border-radius: 15px; margin-top: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: left;">
+            <input type="text" id="customDate" placeholder="Ej: 7 de Marzo" style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ddd; border-radius:8px;">
+            <textarea id="customDesc" placeholder="Escribe algo bonito..." style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;"></textarea>
+            <button id="confirmUpload" style="background:#2b2d42; color:white; width:100%; padding:10px; border-radius:8px; border:none; margin-top:10px; font-weight:600; cursor:pointer;">Guardar Recuerdo ❤️</button>
         </div>
-        
         <p id="status" style="color: var(--accent); font-size: 0.8rem; margin-top: 10px;"></p>
     </section>
 
@@ -201,23 +147,18 @@ header p {
         <h2>Nuestros Recuerdos</h2>
         
         <div class="memory-card">
-            <img src="foto1.jpeg" alt="Inicio">
-            <img src="foto4.jpeg" alt="Detalle">
-            <div class="memory-info">
-                <p><b>7 de Febrero:</b> El día que todo comenzó. ❤️</p>
-            </div>
+            <img src="foto1.jpeg">
+            <img src="foto4.jpeg">
+            <div class="memory-info"><p><b>7 de Febrero:</b> El día que todo comenzó. ❤️</p></div>
         </div>
         <div class="memory-card">
-            <img src="foto3.png" alt="Llamada">
-            <div class="memory-info">
-                <p><b>9 de Febrero:</b> Nuestra primera llamada.</p>
-            </div>
+            <img src="foto3.png">
+            <div class="memory-info"><p><b>9 de Febrero:</b> Nuestra primera llamada.</p></div>
         </div>
         <div class="memory-card">
-            <img src="foto2.jpeg" alt="Llamada">
-            <div class="memory-info">
-                <p><b>14 de Febrero:</b> Nuestra primera videollamada larga.</p>
-            </div>
+            <img src="foto2.jpeg">
+            <img src="header.jpeg">
+            <div class="memory-info"><p><b>14 de Febrero:</b> Nuestra primera videollamada larga.</p></div>
         </div>
 
         <div id="dynamicGallery"></div>
@@ -226,20 +167,19 @@ header p {
     <div class="next-step" id="unlockableSection">
         <div id="lockedState">
             <h3>🔒 Próximamente...</h3>
-            <div class="timer" id="countdownLetter" style="margin-bottom: 15px;"></div>
-            <p>Algo especial te espera en <b>Semana Santa</b>. <br> Prepárate para la sorpresa.</p>
+            <div class="timer" id="countdownLetter"></div>
+            <p>Algo especial te espera en <b>Semana Santa</b>.</p>
         </div>
-
         <div id="unlockedState" style="display: none;">
             <h3>✨ Sorpresa Desbloqueada ✨</h3>
-            <img src="carta.jpeg" id="cartaImage" style="width: 100%; border-radius: 10px; margin-top: 10px;">
-            <p>Prometí que llegaría, y aquí está nuestro primer gran recuerdo físico. ❤️</p>
+            <img src="carta.jpeg" style="width: 100%; border-radius: 10px; margin-top: 10px;">
+            <p>Nuestro primer gran recuerdo físico. ❤️</p>
         </div>
     </div>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
         import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
         const firebaseConfig = {
@@ -255,105 +195,67 @@ header p {
         const db = getFirestore(app);
         const storage = getStorage(app);
 
-        const imageInput = document.getElementById('imageInput');
-        const uploadForm = document.getElementById('uploadForm');
-        const confirmBtn = document.getElementById('confirmUpload');
-        const dynamicGallery = document.getElementById('dynamicGallery');
-        const status = document.getElementById('status');
+        // --- LÓGICA DE CHECKLIST DINÁMICA ---
+        window.addItem = async (cat) => {
+            const input = document.getElementById(cat === 'todo' ? 'inputTodo' : 'inputSex');
+            if (!input.value.trim()) return;
+            await addDoc(collection(db, "checklist"), { text: input.value, checked: false, category: cat, timestamp: serverTimestamp() });
+            input.value = "";
+        };
 
-        let selectedFile = null;
+        window.toggleCheck = async (id, status) => { await updateDoc(doc(db, "checklist", id), { checked: status }); };
+        window.removeItem = async (id) => { if(confirm("¿Borrar?")) await deleteDoc(doc(db, "checklist", id)); };
 
-        imageInput.addEventListener('change', (e) => {
-            selectedFile = e.target.files[0];
-            if (selectedFile) {
-                uploadForm.style.display = 'block';
-                status.innerText = "Archivo seleccionado. Añade los detalles.";
-            }
-        });
-
-        confirmBtn.addEventListener('click', async () => {
-            if (!selectedFile) return;
-            const dateVal = document.getElementById('customDate').value || "Recuerdo";
-            const descVal = document.getElementById('customDesc').value || "";
-            const isVideo = selectedFile.type.startsWith('video/');
-
-            try {
-                confirmBtn.disabled = true;
-                status.innerText = "Subiendo recuerdo...";
-                const storageRef = ref(storage, `momentos/${Date.now()}_${selectedFile.name}`);
-                const snap = await uploadBytes(storageRef, selectedFile);
-                const url = await getDownloadURL(snap.ref);
-
-                await addDoc(collection(db, "momentos"), {
-                    url: url,
-                    userDate: dateVal,
-                    description: descVal,
-                    type: isVideo ? 'video' : 'image',
-                    timestamp: serverTimestamp()
-                });
-
-                status.innerText = "¡Listo! ❤️";
-                uploadForm.style.display = 'none';
-                imageInput.value = "";
-                confirmBtn.disabled = false;
-                setTimeout(() => status.innerText = "", 3000);
-            } catch (err) {
-                status.innerText = "Error al subir.";
-                confirmBtn.disabled = false;
-            }
-        });
-
-        const q = query(collection(db, "momentos"), orderBy("timestamp", "desc"));
-        onSnapshot(q, (snapshot) => {
-            dynamicGallery.innerHTML = "";
-            snapshot.forEach((doc) => {
-                const data = doc.data();
-                const card = document.createElement('div');
-                card.className = 'memory-card';
-                let media = data.type === 'video' ? `<video src="${data.url}" controls></video>` : `<img src="${data.url}">`;
-                card.innerHTML = `${media}<div class="memory-info"><p><b>${data.userDate}:</b> ${data.description}</p></div>`;
-                dynamicGallery.appendChild(card);
+        onSnapshot(query(collection(db, "checklist"), orderBy("timestamp", "asc")), (snap) => {
+            const todo = document.getElementById('container-todo'); const sex = document.getElementById('container-sex');
+            todo.innerHTML = ""; sex.innerHTML = "";
+            snap.forEach((d) => {
+                const item = d.data(); const id = d.id;
+                const html = `<div class="checklist-item"><div><input type="checkbox" ${item.checked ? 'checked' : ''} onchange="toggleCheck('${id}', this.checked)"><span style="${item.checked ? 'text-decoration:line-through;color:#aaa;' : ''}">${item.text}</span></div><button class="btn-delete" onclick="removeItem('${id}')">✕</button></div>`;
+                if (item.category === 'todo') todo.innerHTML += html; else sex.innerHTML += html;
             });
         });
 
-        function updateTimer() {
-            const startDate = new Date("2026-02-07T04:49:00");
-            const now = new Date();
-            const diff = now - startDate;
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const m = Math.floor((diff / 1000 / 60) % 60);
-            const s = Math.floor((diff / 1000) % 60);
+        // --- SIDEBAR Y TIMERS ---
+        window.toggleSidebar = () => {
+            const s = document.getElementById("sidebar");
+            s.style.width = s.style.width === "280px" ? "0" : "280px";
+        };
 
-            document.getElementById('clock').innerHTML = `<div><span>${d}</span>días</div><div><span>${h}</span>hrs</div><div><span>${m}</span>min</div><div><span>${s}</span>seg</div>`;
-            const secsSpan = document.querySelector('#clock div:last-child span');
-            if(secsSpan) { secsSpan.classList.add('pulse'); setTimeout(() => secsSpan.classList.remove('pulse'), 200); }
-        }
-
-        function updateUnlockTimer() {
-            const unlockDate = new Date("2026-03-29T00:00:00").getTime();
-            const now = new Date().getTime();
-            const gap = unlockDate - now;
-            const locked = document.getElementById('lockedState');
-            const unlocked = document.getElementById('unlockedState');
-            const countdownDiv = document.getElementById('countdownLetter');
-
-            if (gap <= 0) {
-                locked.style.display = 'none';
-                unlocked.style.display = 'block';
-                return;
+        function updateTimers() {
+            const start = new Date("2026-02-07T04:49:00");
+            const diff = new Date() - start;
+            const d = Math.floor(diff / 86400000), h = Math.floor((diff / 3600000) % 24), m = Math.floor((diff / 60000) % 60), s = Math.floor((diff / 1000) % 60);
+            document.getElementById('clock').innerHTML = `<div><span>${d}</span>d</div><div><span>${h}</span>h</div><div><span>${m}</span>m</div><div><span>${s}</span>s</div>`;
+            
+            const gap = new Date("2026-03-29T00:00:00") - new Date();
+            if (gap <= 0) { document.getElementById('lockedState').style.display = 'none'; document.getElementById('unlockedState').style.display = 'block'; }
+            else {
+                const dd = Math.floor(gap / 86400000), hh = Math.floor((gap / 3600000) % 24), mm = Math.floor((gap / 60000) % 60), ss = Math.floor((gap / 1000) % 60);
+                document.getElementById('countdownLetter').innerHTML = `<div><span>${dd}</span>d</div><div><span>${hh}</span>h</div><div><span>${mm}</span>m</div><div><span>${ss}</span>s</div>`;
             }
-
-            const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
-            const d = Math.floor(gap / day), h = Math.floor((gap % day) / hour), m = Math.floor((gap % hour) / minute), s = Math.floor((gap % minute) / second);
-            countdownDiv.innerHTML = `<div><span>${d}</span>d</div><div><span>${h}</span>h</div><div><span>${m}</span>m</div><div><span>${s}</span>s</div>`;
         }
+        setInterval(updateTimers, 1000); updateTimers();
 
-        setInterval(updateTimer, 1000);
-        setInterval(updateUnlockTimer, 1000);
-        updateTimer();
-        updateUnlockTimer();
+        // --- SUBIDA DE MOMENTOS ---
+        const imageInput = document.getElementById('imageInput');
+        imageInput.addEventListener('change', () => document.getElementById('uploadForm').style.display = 'block');
+
+        document.getElementById('confirmUpload').addEventListener('click', async () => {
+            const file = imageInput.files[0]; if(!file) return;
+            document.getElementById('status').innerText = "Subiendo...";
+            const url = await getDownloadURL((await uploadBytes(ref(storage, `momentos/${Date.now()}`), file)).ref);
+            await addDoc(collection(db, "momentos"), { url, userDate: document.getElementById('customDate').value, description: document.getElementById('customDesc').value, type: file.type.startsWith('video/') ? 'video' : 'image', timestamp: serverTimestamp() });
+            location.reload();
+        });
+
+        onSnapshot(query(collection(db, "momentos"), orderBy("timestamp", "desc")), (snap) => {
+            const g = document.getElementById('dynamicGallery'); g.innerHTML = "";
+            snap.forEach(d => {
+                const data = d.data();
+                g.innerHTML += `<div class="memory-card">${data.type === 'video' ? `<video src="${data.url}" controls></video>` : `<img src="${data.url}">`}<div class="memory-info"><p><b>${data.userDate}:</b> ${data.description}</p></div></div>`;
+            });
+        });
     </script>
 </body>
-
 </html>
