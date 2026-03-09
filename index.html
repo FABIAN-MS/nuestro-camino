@@ -228,7 +228,7 @@
             const d = Math.floor(diff / 86400000), h = Math.floor((diff / 3600000) % 24), m = Math.floor((diff / 60000) % 60), s = Math.floor((diff / 1000) % 60);
             document.getElementById('clock').innerHTML = `<div><span>${d}</span>d</div><div><span>${h}</span>h</div><div><span>${m}</span>m</div><div><span>${s}</span>s</div>`;
             
-            const gap = new Date("2026-03-29T00:00:00") - new Date();
+            const gap = new Date("2026-03-27T00:00:00") - new Date();
             if (gap <= 0) { document.getElementById('lockedState').style.display = 'none'; document.getElementById('unlockedState').style.display = 'block'; }
             else {
                 const dd = Math.floor(gap / 86400000), hh = Math.floor((gap / 3600000) % 24), mm = Math.floor((gap / 60000) % 60), ss = Math.floor((gap / 1000) % 60);
@@ -258,4 +258,5 @@
         });
     </script>
 </body>
+
 </html>
